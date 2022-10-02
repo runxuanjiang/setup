@@ -23,6 +23,11 @@ sudo apt-get upgrade
 sudo apt-get install g++ make rsync wget git ssh gdb tree
 ```
 
+Install latex packages
+```
+sudo apt-get install texlive-full
+```
+
 ## Setting up Zsh and Oh-My-Zsh
 
 install Zsh
