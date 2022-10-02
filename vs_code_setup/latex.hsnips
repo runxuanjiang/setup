@@ -1,0 +1,376 @@
+# Contexts
+global
+function math(context) {
+    return context.scopes.some(s => s.startsWith("meta.math"));
+}
+endglobal
+
+# Sections and headings
+snippet part w
+\part{$1}
+endsnippet
+
+snippet upart w
+\part*{$1}
+endsnippet
+
+snippet chap w
+\chapter{$1}
+endsnippet
+
+snippet uchap w
+\chapter*{$1}
+endsnippet
+
+snippet sec w
+\section{$1}
+endsnippet
+
+snippet usec w
+\section*{$1}
+endsnippet
+
+snippet ssec w
+\subsection{$1}
+endsnippet
+
+snippet ussec w
+\subsection*{$1}
+endsnippet
+
+snippet sssec w
+\subsubsection{$1}
+endsnippet
+
+snippet usssec w
+\subsubsection*{$1}
+endsnippet
+
+snippet par w
+\paragraph{$1}
+endsnippet
+
+snippet upar w
+\paragraph*{$1}
+endsnippet
+
+snippet spar w
+\subparagraph{$1}
+endsnippet
+
+snippet uspar w
+\subparagraph*{$1}
+endsnippet
+
+# Text formatting
+snippet ul w
+\underline{$1}
+endsnippet
+
+snippet bf w
+\textbf{$1}
+endsnippet
+
+snippet it w
+\textit{$1}
+endsnippet
+
+snippet em w
+\emph{$1}
+endsnippet
+
+snippet tt w
+\texttt{$1}
+endsnippet
+
+context math(context)
+snippet tx Aw
+\text{$1}
+endsnippet
+
+snippet ... Ai
+\ldots
+endsnippet
+
+# Math mode formatting
+
+snippet im w
+\($1\)
+endsnippet
+
+snippet dm w
+\[$1\]
+endsnippet
+
+context math(context)
+snippet bb w
+\mathbb{$1}
+endsnippet
+
+context math(context)
+snippet cal w
+\mathcal{$1}
+endsnippet
+
+context math(context)
+snippet __ Ai
+_{$1}
+endsnippet
+
+context math(context)
+snippet ** Ai
+^{$1}
+endsnippet
+
+context math(context)
+snippet // Ai
+\frac{$1}{$2}
+endsnippet
+
+context math(context)
+snippet bar Aw
+\bar{$1}
+endsnippet
+
+context math(context)
+snippet hat Aw
+\hat{$1}
+endsnippet
+
+
+# Greek Letters
+
+context math(context)
+snippet `;([a-zA-Z])` Aw
+``
+gmap = {
+    "a": "\\alpha",
+    "b": "\\beta",
+    "G": "\\Gamma",
+    "g": "\\gamma",
+    "D": "\\Delta",
+    "d": "\\delta",
+    "e": "\\epsilon",
+    "z": "\\zeta",
+    "h": "\\eta",
+    "Q": "\\Theta",
+    "q": "\\theta",
+    "i": "\\iota",
+    "k": "\\kappa",
+    "L": "\\Lambda",
+    "l": "\\lambda",
+    "m": "\\mu",
+    "n": "\\nu",
+    "X": "\\Xi",
+    "x": "\\xi",
+    "P": "\\Pi",
+    "p": "\\pi",
+    "r": "\\rho",
+    "S": "\\Sigma",
+    "s": "\\sigma",
+    "t": "\\tau",
+    "u": "\\upsilon",
+    "F": "\\Phi",
+    "f": "\\phi",
+    "c": "\\chi",
+    "Y": "\\Psi",
+    "y": "\\psi",
+    "O": "\\Omega",
+    "o": "\\omega",
+}
+rv = (gmap[m[1]] || m[0])
+``
+endsnippet
+
+# Math symbols
+
+context math(context)
+snippet cross Aw
+\times
+endsnippet
+
+context math(context)
+snippet dot Aw
+\cdot
+endsnippet
+
+context math(context)
+snippet iff Aw
+\iff
+endsnippet
+
+context math(context)
+snippet eq Aw
+\sim
+endsnippet
+
+context math(context)
+snippet iso Aw
+\cong
+endsnippet
+
+context math(context)
+snippet cong Aw
+\cong
+endsnippet
+
+context math(context)
+snippet inf A
+\infty
+endsnippet
+
+context math(context)
+snippet -> Ai
+\\rightarrow
+endsnippet
+
+context math(context)
+snippet => Ai
+\\Rightarrow
+endsnippet
+
+context math(context)
+snippet +> Ai
+\\mapsto
+endsnippet
+
+context math(context)
+snippet <= Ai
+\\leq
+endsnippet
+
+context math(context)
+snippet >= Ai
+\\geq
+endsnippet
+
+context math(context)
+snippet != Ai
+\\neq
+endsnippet
+
+# Constructs
+
+snippet item
+\begin{itemize}
+    \item $1
+\end{itemize}
+
+endsnippet
+
+snippet enum
+\begin{enumerate}
+    \item $1
+\end{enumerate}
+
+endsnippet
+
+context math(context)
+snippet \{ Ai
+\{$1\\}
+endsnippet
+
+context math(context)
+snippet <> Ai
+\langle $1 \rangle
+endsnippet
+
+context math(context)
+snippet `vec([1-9])` Ai
+
+\begin{bmatrix}
+``
+rows = parseInt(m[1]);
+for (let i = 0; i < rows; ++i) {
+    rv += "\t";
+    rv += `${snip.tabstop(i+1)} \\\\\\ \n`;
+}
+``
+\end{bmatrix}
+endsnippet
+
+context math(context)
+snippet `mat([1-9])([1-9])` Ai
+
+\begin{bmatrix}
+``
+rows = parseInt(m[1]);
+cols = parseInt(m[2]);
+for (let i = 0; i < rows; ++i) {
+    rv += "\t";
+    for (let j = 0; j+1 < cols; ++j) {
+        rv += `${snip.tabstop(i * cols + j + 1)} & `;
+    }
+    rv += `${snip.tabstop(i * cols + cols)} \\\\\\ \n`;
+}
+``
+\end{bmatrix}
+endsnippet
+
+# Theorems, Definitions, and Proofs
+
+snippet def w
+\begin{defn}[$1]
+    $2
+\end{defn}
+endsnippet
+
+snippet eg w
+\begin{eg}[$1]
+    $2
+\end{eg}
+endsnippet
+
+snippet neg w
+\begin{noeg}[$1]
+    $2
+\end{noeg}
+endsnippet
+
+snippet prop w
+\begin{prop}[$1]
+    $2
+\end{prop}
+endsnippet
+
+snippet thm w
+\begin{thm}[$1]
+    $2
+\end{thm}
+endsnippet
+
+snippet cor w
+\begin{cor}[$1]
+    $2
+\end{cor}
+endsnippet
+
+snippet lemma w
+\begin{lemma}[$1]
+    $2
+\end{lemma}
+endsnippet
+
+snippet rmk w
+\begin{rmk}[$1]
+    $2
+\end{rmk}
+endsnippet
+
+snippet note w
+\begin{note}[$1]
+    $2
+\end{note}
+endsnippet
+
+snippet exer w
+\begin{exer}[$1]
+    $2
+\end{exer}
+endsnippet
+
+snippet pf w
+\begin{proof}[Proof$1]
+    $2
+\end{proof}
+endsnippet
