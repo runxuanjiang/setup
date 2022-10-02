@@ -38,6 +38,7 @@ Install [PowerLevel10k](https://github.com/romkatv/powerlevel10k)
 * Install PowerLevel10k
 * Configure PowerLevel10k (follow the instructions in the github readme and terminal)
 
+Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 ## Install Anaconda
 Install [Anaconda](https://www.anaconda.com/products/distribution#linux)
 
