@@ -1,0 +1,71 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "remote.SSH.remotePlatform": {
+        "greatlakes.arc-ts.umich.edu": "linux"
+    },
+    "git.ignoreLegacyWarning": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "terminal.integrated.inheritEnv": false,
+    "jupyter.interactiveWindowMode": "perFile",
+    "python.languageServer": "Pylance",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "python.showStartPage": false,
+    "remote.WSL.fileWatcher.polling": true,
+    "explorer.confirmDragAndDrop": false,
+    "latex-workshop.latex.watch.usePolling": true,
+    "latex-workshop.message.error.show": false,
+    "jupyter.askForKernelRestart": false,
+    "latex-workshop.message.warning.show": false,
+    "workbench.colorTheme": "Activate UMBRA protocol",
+    "[latex]": {
+
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.wordWrap": "on"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.minimap.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "glassit.alpha": 235,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "terminal.integrated.experimentalLinkProvider": false,
+    "terminal.integrated.customGlyphs": false,
+    "terminal.integrated.gpuAcceleration": "on",
+    "files.autoSave": "afterDelay",
+    "latex-workshop.intellisense.includegraphics.preview.enabled": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "'MesloLGS NF'",
+    "[restructuredtext]": {
+        "editor.wordWrap": "on"
+    },
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 12,
+    "editor.suggest.showWords": false,
+    "latex-workshop.hover.preview.enabled": false,
+    "hsnips.hsnipsPath": "/home/runxuan/hsnips",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.snippetSuggestions": "bottom",
+    "editor.acceptSuggestionOnEnter": "off"
+}
