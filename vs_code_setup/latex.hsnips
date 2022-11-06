@@ -220,6 +220,11 @@ snippet inf A
 endsnippet
 
 context math(context)
+snippet ox Aw
+\otimes
+endsnippet
+
+context math(context)
 snippet -> Ai
 \\rightarrow
 endsnippet
@@ -235,6 +240,11 @@ snippet +> Ai
 endsnippet
 
 context math(context)
+snippet ~> Ai
+\\xrightarrow{\\sim}
+endsnippet
+
+context math(context)
 snippet <= Ai
 \\leq
 endsnippet
@@ -247,6 +257,16 @@ endsnippet
 context math(context)
 snippet != Ai
 \\neq
+endsnippet
+
+context math(context)
+snippet v. Ai
+\\vdots
+endsnippet
+
+context math(context)
+snippet comp Aw
+\\circ
 endsnippet
 
 # Constructs
